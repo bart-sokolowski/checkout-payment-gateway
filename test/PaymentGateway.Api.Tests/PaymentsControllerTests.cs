@@ -84,7 +84,7 @@ public class PaymentsControllerTests
         {
             CardNumber = "1234",
             ExpiryMonth = currentMonth,
-            ExpiryYear = currentYear + 1,
+            ExpiryYear = currentYear,
             Cvv = "123",
             Amount = 100,
             Currency = "USD"
@@ -95,7 +95,7 @@ public class PaymentsControllerTests
         {
             CardNumber = "2222405343248877",
             ExpiryMonth = 0,
-            ExpiryYear = currentYear + 1,
+            ExpiryYear = currentYear,
             Cvv = "123",
             Amount = 100,
             Currency = "USD"
@@ -117,7 +117,7 @@ public class PaymentsControllerTests
         {
             CardNumber = "2222405343248877",
             ExpiryMonth = currentMonth,
-            ExpiryYear = currentYear + 1,
+            ExpiryYear = currentYear,
             Cvv = "1",
             Amount = 100,
             Currency = "USD"
@@ -128,7 +128,7 @@ public class PaymentsControllerTests
         {
             CardNumber = "2222405343248877",
             ExpiryMonth = currentMonth,
-            ExpiryYear = currentYear + 1,
+            ExpiryYear = currentYear,
             Cvv = "123",
             Amount = 0,
             Currency = "USD"
@@ -139,7 +139,7 @@ public class PaymentsControllerTests
         {
             CardNumber = "2222405343248877",
             ExpiryMonth = currentMonth,
-            ExpiryYear = currentYear + 1,
+            ExpiryYear = currentYear,
             Cvv = "123",
             Amount = 100,
             Currency = "USDX"
@@ -196,7 +196,7 @@ public class PaymentsControllerTests
         var currentYear = DateTime.UtcNow.Year;
         var currentMonth = DateTime.UtcNow.Month;
 
-        //set card number to finish with "0"
+        //set card number to finish with "0" to simulte bank system failure
         var paymentRequest = new PostPaymentRequest
         {
             CardNumber = "2222405343248870",
@@ -225,7 +225,7 @@ public class PaymentsControllerTests
         var currentYear = DateTime.UtcNow.Year;
         var currentMonth = DateTime.UtcNow.Month;
 
-        //set card number to finish with even number
+        //set card number to finish with even number to simulte bank declining the payment
         var paymentRequest = new PostPaymentRequest
         {
             CardNumber = "2222405343248878",
